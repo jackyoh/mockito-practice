@@ -37,10 +37,12 @@ public class MockitoTest {
       mockedList.add("one");
       mockedList.add("two");
       mockedList.add("three");
-
       when(mockedList.size()).thenReturn(3);
+      assertEquals(3, mockedList.size());
+
       verify(mockedList, times(1)).add("one");
       verify(mockedList, times(0)).isEmpty();
+      verify(mockedList, times(1)).size();
   }
 
   @Test
